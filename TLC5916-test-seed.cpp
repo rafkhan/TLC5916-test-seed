@@ -52,10 +52,9 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
       {
         if (clkState)
         {
-          if (clkCount == 0)
+          if (clkCount == 7)
           {
             dsy_gpio_write(&latchGpio, 1);
-            flip = !flip;
             value = (value + 1) % 256;
           }
           clkCount = (clkCount + 1) % 8;
